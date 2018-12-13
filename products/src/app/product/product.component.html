@@ -1,0 +1,10 @@
+<main>
+<p>
+  product works!
+</p>
+<button [routerLink]="['/reviews']" >Go to reviews</button>
+<button [routerLink] = "['details', 5]">Go to /products/details/5</button>
+<button [routerLink] = "['brand', 5]">Go to /products/brand/5</button>
+<button [routerLink]= "['category', 5]">Go to /products/category/5</button>
+<router-outlet></router-outlet>
+</main>

@@ -1,0 +1,11 @@
+<main>
+<p>
+  review works!
+</p>
+  <button [routerLink]="['/products']" >Go to Products</button>
+  <button [routerLink] = "['details', 5]">Go to /reviews/details/5</button>
+<button [routerLink] = "['author', 5]">Go to /reviews/author/5</button>
+<button [routerLink] = "['all', 5]">Go to /reviews/all/5</button>
+
+<router-outlet></router-outlet>
+</main>
