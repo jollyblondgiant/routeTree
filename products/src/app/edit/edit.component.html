@@ -1,0 +1,18 @@
+<main>
+    <img src="{{editProduct.img}}" alt="{{editProduct.name}}" style="width: 80px;">
+<form (submit)="updateProduct(theseParams.id)">
+  
+<input [(ngModel)]="editProduct.name" placeholder="{{editProduct.name}}" name = "editProduct.name"/><br/>
+<input [(ngModel)]="editProduct.price" placeholder="{{editProduct.price}}" name = "editProduct.price"/><br/>
+<input [(ngModel)]="editProduct.img" placeholder="{{editProduct.img}}" name = "editProduct.img"/><br/>
+<button [routerLink]="['/products']" >Cancel</button>
+<input type="submit" value="Update"/>
+</form>
+
+<div id="errors" *ngIf="errorMessage.length" >
+        <p *ngFor="let x of errorMessage" >{{x}}</p>
+      
+      </div>
+
+
+</main>

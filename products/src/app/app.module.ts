@@ -16,7 +16,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
-import { ProductsService } from './products.service'
+import { ProductsService } from './products.service';
+import { HomeComponent } from './home/home.component';
+import { EditComponent } from './edit/edit.component';
+import { AddComponent } from './add/add.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ProductsService } from './products.service'
     ReviewdetailComponent,
     AuthorComponent,
     AllreviewsComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    HomeComponent,
+    EditComponent,
+    AddComponent
   ],
   imports: [
     AppRoutingModule,

@@ -9,9 +9,17 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
 import { ReviewComponent } from './review/review.component'
 import { ReviewdetailComponent } from './reviewdetail/reviewdetail.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
+import { AddComponent } from './add/add.component'
+import { EditComponent } from './edit/edit.component'
+import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'add', component: AddComponent },
+  
   { path: 'products', component: ProductComponent, children:[
+    { path: 'edit/:id', component: EditComponent },
       {path: 'details/:id', component: ProductdetailComponent },
       {path: 'brand/:id', component: BrandComponent },
       {path: 'category/:cat', component: CategoryComponent },
@@ -22,7 +30,7 @@ const routes: Routes = [
     { path: 'all/:id', component: AllreviewsComponent },
   ] },
 
-  { path: '', pathMatch: 'full', redirectTo: '' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', component: PagenotfoundComponent }
 ];
 

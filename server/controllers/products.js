@@ -15,35 +15,29 @@ module.exports = {
         })
     },
     create:(req,res)=>{
-        var product = new product
+        var product = new Product
         product.name = req.body.name
-        product.quote = req.body.quote
+        product.img = req.body.img
+        product.price = req.body.price
         product.save(function(err){
             if(err){
-                for(var idx in err.errors){
-                    console.log(err.errors[idx].message)
-                }
-                res.json(product)
+                res.json(err)
             }else{
                 res.json(product)
             }
         })
     },
     update:(req,res)=>{
-        
-        console.log("REQ.BODY", req.body)
-        Product.findByIdAndUpdate(req.params.id,{
+        Product.update({id: req.params.id},  {
             $set:{
                 name: req.body.name,
-                quote: req.body.quote
+                price: req.body.price
             },
         },
+        { runValidators: true },
         (err, product)=>{
             if(err){
-                for(var key in err.errors){
-                    console.log(err.errors[key].message)
-                }
-                res.json(product)
+                res.json(err)
             }else{res.json(product)}
         })
     },

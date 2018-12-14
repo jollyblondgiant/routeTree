@@ -1,0 +1,16 @@
+<p>
+Create New Product
+</p>
+<form (submit)="addProduct()">
+  
+<input [(ngModel)]="newProduct.name" placeholder="New Product name:" name = "newProduct.name"/><br/>
+<input [(ngModel)]="newProduct.price" placeholder="New Product price:" name = "newProduct.price"/><br/>
+<input [(ngModel)]="newProduct.img" placeholder="Enter Product URL" name = "newProduct.img"/><br/>
+<button [routerLink]="['/products']" >Cancel</button>
+<input type="submit" value="Submit"/>
+</form>
+
+<div id="errors" *ngIf="errorMessage.length" >
+  <p *ngFor="let x of errorMessage" >{{x}}</p>
+
+</div>

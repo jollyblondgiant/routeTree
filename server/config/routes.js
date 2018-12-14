@@ -9,6 +9,7 @@ module.exports = function(app){
         products.getOne(req,res)
     })
     app.post('/products', (req,res)=>{
+        console.log("ROUTES JS")
         products.create(req,res)
     })
     app.put('/products/:id', (req, res)=>{

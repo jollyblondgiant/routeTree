@@ -4,9 +4,9 @@ express = require('express')
 app = express()
 bodyParser = require('body-parser')
 path = require('path')
-
+flash = require('express-flash')
 app.use(bodyParser.json())
-
+app.use(flash())
 app.use(express.static(__dirname + '/products/dist/products'))
 
 require('./server/config/mongoose')

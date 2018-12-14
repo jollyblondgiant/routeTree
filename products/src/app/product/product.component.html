@@ -2,9 +2,23 @@
 <p>
   product works!
 </p>
+<button [routerLink]="['/home']" >Go Home</button>
+
 <button [routerLink]="['/reviews']" >Go to reviews</button>
+<button [routerLink]="['/add']" >Add a Product</button>
 <button [routerLink] = "['details', 5]">Go to /products/details/5</button>
 <button [routerLink] = "['brand', 5]">Go to /products/brand/5</button>
 <button [routerLink]= "['category', 5]">Go to /products/category/5</button>
-<router-outlet></router-outlet>
+
+<div class = "scroll" >
+  <div *ngFor="let idx of products">
+      <h4>{{idx.name}}</h4>
+      <p>${{idx.price}}</p>
+      <img  style="width: 20%" src="{{idx.img}}" alt="{{idx.name}}"><br/>
+      <button [routerLink]="['edit/', idx._id]" >Edit Item</button>
+      <button (click)="destroyProduct(idx)" >Remove Product</button>
+      
+    </div>
+</div>
 </main>
+<router-outlet></router-outlet>
